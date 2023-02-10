@@ -1,14 +1,16 @@
 'use strict';
+const clock = document.getElementById("clock");
+const hour = document.getElementById("hour");
+const minutes = document.getElementById("minutes");
+const seconds = document.getElementById("seconds");
 
-function setDate(){
-    const now=Date();
-    const seconds =now.getseconds();
-    const secondsDegrees= ((seconds/60)*360);
-    console.log(seconds);
+
+function setTime ( ) {
+    const now = new Date();
+    
+    hour.innerHTML = now.getHours()
+    minutes.innerHTML =  now.getMinutes();
+    seconds.innerHTML = now.getSeconds()
+
 }
-
-const hour = document.querySelector('#hour');
-const minute = document.querySelector('#minute');
-const seconds = document.querySelector('#seconds');
-
-setInterval(setDate,1000);
+setInterval(setTime,1000)

@@ -1,15 +1,10 @@
 'use strict';
-
-
-class MyProfile{
-    #privateMethod(){
-
-const details={
-    Username:'laellawal',
-    password: 'alsadmsnfa',
-    age:18,
-}
-
+class UserProfile {
+    constructor(username, password, age, ){
+        this.#username = username;
+        this.#password = password;
+        this.age = age;
 
     }
-}
+
+};

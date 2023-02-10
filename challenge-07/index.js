@@ -1,15 +1,20 @@
 'use strict';
-
-
-
-const classRoom={
-    hasTeacherAssistance:true,
-    classList: ['Rashid', 'John', 'Roman', 'Lisa', 'Ruth']
-    
+const classroom = {
+    hasTeachingAssistant : true,
+    classList:['rashida', 'john', 'roman', 'lisa', 'omair', 'lukas']
 }
 
-function getStudent(classRoom){
-    if(hasTeacherAssistance=true){
-        
+
+const getStudentNames = (classroom) => {
+    if (classrom.hasTeachingAssistant === true) {
+        const {hasTeachingAssistant, classList} = classroom;
+        const [, , ...students] = classList;
+        console.log(students)
+    }else{
+        const {hasTeachingAssistant, classList} = classroom;
+        const [, ...students] = classList;
+        console.log(students)
     }
 }
+
+getStudentNames();

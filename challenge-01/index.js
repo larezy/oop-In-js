@@ -1,5 +1,7 @@
-class Book{
-    constructor(title, Author, ISBN, numCopies){
+'use strict';
+
+    class Book{
+        constructor(title, Author, ISBN, numCopies){
 
         this.title=title,
         this.Author=Author,
@@ -7,11 +9,37 @@ class Book{
         this.numCopies= numCopies
 
     }
-    getAvailbability (){
-        if(numcopies ===0 ){
-            console.log('Out of stock');
-        }else if (this.numCopies<10){
-            console.log('low Stock');
-        }
+    
+    get Availbability(){
+        return this.getAvailbability();
     }
+
+    getAvailbability= function (){
+        if(this.numcopies ===0 ){
+            return 'Out of stock'
+        }else if (this.numCopies<10){
+            return 'low stock'
+        }
+        return 'In stock';
+    }
+
+
+    sell(numCopiesSold =1){
+        this.numCopies -= numCopiesSold;
+    }
+
+    restock(numCopiesStocked = 5){
+        this.numCopies+= numCopiesStocked;
+    };
+
 }
+
+
+    const SteppingStone = new Book("SteppingStone", "lael lawal", 332245,5);
+    console.log(SteppingStone.getAvailbability());
+
+    SteppingStone.restock(12);
+    console.log(SteppingStone.getAvailbability());
+    
+    SteppingStone.sell(17);
+    console.log(SteppingStone.getAvailbability());

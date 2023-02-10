@@ -1,26 +1,42 @@
 'use strict';
-class Book{
+class Book {
+    constructor (tittle ,author ,ISBN ,numCopies) {
+        this.tittle = tittle;
+        this.author = author;
+        this.ISBN = ISBN;
+        this.numCopies = numCopies;
+    }
+
+    get availibility () {
+        return this.getAvailibility
+    }
     
-    constructor(title, director, Genre, releaseYear, Rating){
-        this.title=title;
-        this.director=director;
-        this.Genre=Genre;
-        this.releaseYear=releaseYear;
-        this.Rating=Rating;
-    };
+    getAvailibility(){
+        if (this.numCopies === 0){
+            console.log('out of stock');
+        }else if (this.numCopies > 10){
+            console.log('in stock');
+        }
+    }
+
+    sell = function(numCopiesSold = 1){
+        this.numCopies -= numCopiesSold;
+}
+    restock = function(numCopiesStocked = 5) {
+            this.numCopies += numCopiesStocked;
 }
 
-Movies.prototype.getOverview=function(){
-    console.log(`${this.title}, a ${this.Genre} film direction by ${this.director} `)
+    
 }
 
-class Technicalbook extent Book {
+    class TechnicalBook extends book {
     constructor(edition){
-        this.edition=edition;
-    }
+        super (tittle ,author ,ISBN ,numCopies)
+        this.edition = edition;
 
-    this.getEdition()={
-
-console.log(`${this.title}, a ${this.Genre} film direction by ${this.director} and the edition`)
     }
-}
+    getEdition() {
+    console.log(`Current version of this book is ${this.edition}`)
+    }
+    
+        }
